@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+</head>
+
+<body class="allelements">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 20px;
+            font-size: 20px;
+            width: 50%;
+            table-layout: fixed;
+        }
+        
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <div style='display:flex;'>
+        <table class="center">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <%path.forEach(function(details){%>
+                <tr style="text-align:center;">
+                    <td>
+                        <%= details.id %>
+                    </td>
+                    <td>
+                        <%= details.name %>
+                    </td>
+                    <td>
+                        <%= details.email %>
+                    </td>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+</body>
+
+</html>
