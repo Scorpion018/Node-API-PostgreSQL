@@ -40,6 +40,12 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/error", (req, res) => {
+  res.sendFile("./error.html", {
+      root: __dirname,
+  });
+});
+
 app.get('/users', (req, res) => {
     var sql = 'select * from users';
     pool.query(sql, (err, results) => {
@@ -66,6 +72,10 @@ app.get('/users/:id', (req, res) => {
         }
     })
 })
+
+app.get('*', function(req, res) {
+  res.redirect('/error');
+});
 
 // app.get('/users/:id', (req, res) => {
 //     const id = parseInt(req.params.id)
