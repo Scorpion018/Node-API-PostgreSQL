@@ -8,8 +8,7 @@ const app = express()
 const port = 3000
 
 console.log(os.freemem())
-
-
+console.log(os.totalMem())
 
 const pool = new Pool({
     user: 'postgres',
